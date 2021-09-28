@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { handleInitialData } from './actions/shared.js';
+import illustration from './images/would_you_rather_illustration_jcomp_freepik.jpg'
+import Login from './components/Login';
 
 class App extends Component {
   componentDidMount() {
@@ -13,19 +14,15 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <h1>Would you rather...?</h1>
         </header>
+
+        <div class="img-container">
+          <img class="illustration" src={ illustration } alt="" />
+          <a class="copyright-link" href='https://www.freepik.com/vectors/people'>People vector created by jcomp - www.freepik.com</a>
+        </div>
+
+        <Login />
       </div>
     );
   }
