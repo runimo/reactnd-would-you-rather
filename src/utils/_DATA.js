@@ -13,7 +13,7 @@ let users = {
   },
   stef: {
     id: 'stef',
-    name: 'stef',
+    name: 'Stef',
     avatarURL: '../public/images/avatar05',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
@@ -25,7 +25,7 @@ let users = {
   },
   kumiko: {
     id: 'kumiko',
-    name: 'kumiko',
+    name: 'Kumiko',
     avatarURL: '../public/images/avatar04',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
