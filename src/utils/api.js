@@ -5,16 +5,16 @@ import {
   _saveQuestionAnswer
 } from './_DATA.js'
 
-export function getInitialData() {
-  return Promise.all([
+export async function getInitialData() {
+  const [users, questions] = await Promise.all([
     _getUsers(),
     _getQuestions()
-  ]).then(
-    ([users, questions]) => ({
-      users,
-      questions
-    })
-  );
+  ]);
+
+  return ({
+    users,
+    questions
+  });
 }
 
 export function saveQuestion(question) {
