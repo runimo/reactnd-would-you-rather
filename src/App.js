@@ -17,9 +17,9 @@ class App extends Component {
           <h1>Would you rather...?</h1>
         </header>
 
-        <div class="img-container">
-          <img class="illustration" src={ illustration } alt="" />
-          <a class="copyright-link" href='https://www.freepik.com/vectors/people'>People vector created by jcomp - www.freepik.com</a>
+        <div className="img-container">
+          <img className="illustration" src={ illustration } alt="" />
+          <a className="copyright-link" href='https://www.freepik.com/vectors/people'>People vector created by jcomp - www.freepik.com</a>
         </div>
 
         <Login />
