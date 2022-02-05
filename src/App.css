@@ -15,6 +15,11 @@
   color: #fff;
 }
 
+.title {
+  color: #e39b32;
+  margin-bottom: 0;
+}
+
 .img-container {
   display: flex;
   flex-direction: column;
@@ -44,8 +49,29 @@
   border-radius: 4px;
   background: #00a86a;
   color: #fff;
+  cursor: pointer;
   font-weight: 550;
   font-size: 1.1em;
+}
+
+.logout {
+  display: flex;
+  margin-left: auto;
+}
+
+.logout__button {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: inherit;
+  line-height: normal;
+  margin-left: 25px;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.logout-user {
+  margin: 35px 0 0 0;
 }
 
 .copyright-link {
@@ -57,5 +83,43 @@
 .illustration {
   height: 400px;
   width: 400px;
-  margin: 24px 0 0 0;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+.nav li:first-child {
+  padding-left: 0;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+  padding: 10px;
+  text-decoration: none;
 }
