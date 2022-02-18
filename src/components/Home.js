@@ -1,7 +1,11 @@
 import React, { Component, Fragment } from 'react'
+import { Route, Routes } from 'react-router-dom'
 import { connect } from 'react-redux'
+import AnsweredQuestionsList from './AnsweredQuestionsList'
 import illustration from '../images/would_you_rather_illustration_jcomp_freepik.jpg'
 import Login from './Login'
+import SubNav from './SubNav'
+import UnansweredQuestionsList from './UnansweredQuestionsList'
 
 class Home extends Component {
   render () {
@@ -19,7 +23,18 @@ class Home extends Component {
         </Fragment>
       )
     } else {
-      return <div></div>
+      return (
+        <Fragment>
+          <SubNav />
+          <div>
+            <Routes>
+              <Route path='/unanswered' element={<UnansweredQuestionsList />} />
+              <Route path='/answered' element={<AnsweredQuestionsList />} />
+            </Routes>
+          </div>
+        </Fragment>
+
+      )
     }
   }
 }
