@@ -159,3 +159,46 @@ legend {
 .active {
   color: #7d34eb;
 }
+
+.sr-only {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+.width-33 {
+  width: 33%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.m-t {
+  margin-top: 24px;
+}
+
+.m-t-0_5 {
+  margin-top: 12px;
+}
+
+.m-b-0_5 {
+  margin-bottom: 12px;
+}
+
+.font-size-small {
+  font-size: 0.8em;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-item-center {
+  margin-left: auto;
+  margin-right: auto;
+}
