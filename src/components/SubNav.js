@@ -7,12 +7,16 @@ class SubNav extends Component {
       <nav className="sub-navigation">
         <ul>
           <li>
-            <NavLink to='/unanswered' className={isActive => isActive ? 'active' : ''}>
+            <NavLink to='/unanswered' className={({ isActive }) =>
+              isActive ? 'active' : undefined
+            }>
               Unanswered
             </NavLink>
           </li>
           <li>
-            <NavLink to='/answered'>
+            <NavLink to='/answered' className={({ isActive }) =>
+              isActive ? 'active' : undefined
+            }>
               Answered
             </NavLink>
           </li>
