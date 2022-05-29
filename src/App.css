@@ -208,6 +208,14 @@ legend {
   margin-bottom: 12px;
 }
 
+.p-r {
+  padding-right: 24px;
+}
+
+.p-t-0_5 {
+  padding-top: 12px;
+}
+
 .font-size-small {
   font-size: 0.8em;
 }
@@ -236,16 +244,17 @@ legend {
 
 .card-list > li {
   margin-bottom: 20px;
+  padding-bottom: 12px;
 }
 
 .card {
   border: 1px solid #d3d3d3;
   border-radius: 6px;
-  padding: 0 0 30px 0;
+  padding: 0;
 }
 
 .card-avatar {
-  margin-top: 6px;
+  margin-top: 3px;
   margin-right: 24px;
   border-right: 1px solid #d3d3d3;
 }

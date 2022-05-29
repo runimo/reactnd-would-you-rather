@@ -27,9 +27,9 @@ class Question extends Component {
         <div className="card-header">
           <h2>{this.authorName(question.author)} asks:</h2>
         </div>
-        <div className="flex">
+        <div className="flex p-t-0_5">
           <img alt="user avatar" className="card-avatar" height="150px" width ="150px" src={this.authorAvatar(question.author)} />
-          <div>
+          <div className="width-100 p-r">
             <h3>Would you rather...</h3>
             {isPreview &&
               <div>
