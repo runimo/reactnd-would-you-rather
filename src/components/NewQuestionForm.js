@@ -57,7 +57,7 @@ class NewQuestionForm extends Component {
               <label className='sr-only' htmlFor='optionTwo'>Option two</label>
               <input type='text' id='optionTwo' className='width-100' onChange={e => this.handleChange(e, 'optionTwoText')} placeholder='Enter option two here' value={optionTwoText} />
             </div>
-            <button type='submit' className="btn-primary width-100 m-t" onClick={e => this.handleSubmit(e)} disabled={optionOneText === '' && optionTwoText === ''}>Submit</button>
+            <button type='submit' className="btn btn-primary width-100 m-t" onClick={e => this.handleSubmit(e)} disabled={optionOneText === '' && optionTwoText === ''}>Submit</button>
           </fieldset>
         </form>
       </div>
