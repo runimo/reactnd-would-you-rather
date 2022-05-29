@@ -2,7 +2,7 @@ let users = {
   jiayi: {
     id: 'jiayi',
     name: 'Jiayi',
-    avatarURL: '../public/images/avatar03',
+    avatarURL: '/images/avatar03.png',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,7 +14,7 @@ let users = {
   stef: {
     id: 'stef',
     name: 'Stef',
-    avatarURL: '../public/images/avatar05',
+    avatarURL: '/images/avatar05.png',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -26,7 +26,7 @@ let users = {
   kumiko: {
     id: 'kumiko',
     name: 'Kumiko',
-    avatarURL: '../public/images/avatar04',
+    avatarURL: '/images/avatar04.png',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -38,7 +38,7 @@ let users = {
   jose: {
     id: 'jose',
     name: 'José',
-    avatarURL: '../public/images/avatar02',
+    avatarURL: '/images/avatar02.png',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -48,7 +48,7 @@ let users = {
   ayanah: {
     id: 'ayanah',
     name: 'Ayanah',
-    avatarURL: '../public/images/avatar01',
+    avatarURL: '/images/avatar01.png',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
