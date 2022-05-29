@@ -128,15 +128,30 @@ li {
   align-items: center;
 }
 
-.btn-primary {
+.btn {
   height: 32px;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+.btn-primary {
   background: #00a86a;
   color: #fff;
-  cursor: pointer;
   font-weight: 550;
-  font-size: 1.1em;
+}
+
+.btn-outline {
+  border: 1px solid #00a86a;
+  background: #fff;
+  color: #00a86a;
+}
+
+.btn-outline:hover {
+  color: #fff;
+  background: #00a86a;
+  font-weight: 600;
 }
 
 fieldset {
@@ -185,12 +200,24 @@ legend {
   margin-top: 12px;
 }
 
+.m-b {
+  margin-bottom: 24px;
+}
+
 .m-b-0_5 {
   margin-bottom: 12px;
 }
 
 .font-size-small {
   font-size: 0.8em;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  justify-content: center;
 }
 
 .flex-column {
@@ -201,4 +228,34 @@ legend {
 .flex-item-center {
   margin-left: auto;
   margin-right: auto;
+}
+
+.card-list {
+  flex-basis: 33%;
+}
+
+.card-list > li {
+  margin-bottom: 20px;
+}
+
+.card {
+  border: 1px solid #d3d3d3;
+  border-radius: 6px;
+  padding: 0 0 30px 0;
+}
+
+.card-avatar {
+  margin-top: 6px;
+  margin-right: 24px;
+  border-right: 1px solid #d3d3d3;
+}
+
+.card-header {
+  background: #f3f3f3;
+  padding: 12px;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.card-header > h2 {
+  margin: 0;
 }

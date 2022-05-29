@@ -1,15 +1,14 @@
 import React, { Component, Fragment } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { connect } from 'react-redux'
-import AnsweredQuestionsList from './AnsweredQuestionsList'
 import illustration from '../images/would_you_rather_illustration_jcomp_freepik.jpg'
 import Login from './Login'
+import QuestionsList from './QuestionsList'
 import SubNav from './SubNav'
-import UnansweredQuestionsList from './UnansweredQuestionsList'
 
 class Home extends Component {
   render () {
-    const { authedUser } = this.props
+    const { answeredQuestionIds, authedUser, unansweredQuestionIds } = this.props
 
     if (!authedUser) {
       return (
@@ -26,14 +25,13 @@ class Home extends Component {
       return (
         <Fragment>
           <SubNav />
-          <div>
+          <div className="flex flex-center">
             <Routes>
-              <Route path='/unanswered' element={<UnansweredQuestionsList />} />
-              <Route path='/answered' element={<AnsweredQuestionsList />} />
+              <Route path='/unanswered' element={<QuestionsList questionIds={unansweredQuestionIds} />} />
+              <Route path='/answered' element={<QuestionsList questionIds={answeredQuestionIds} />} />
             </Routes>
           </div>
         </Fragment>
-
       )
     }
   }
@@ -43,9 +41,9 @@ function mapStateToProps ({ authedUser, questions, users }) {
   const currentUser = authedUser ? users[authedUser.id] : null
 
   return {
-    answeredQuestions: currentUser ? Object.keys(currentUser.answers).map(key => questions[key]) : [],
+    answeredQuestionIds: currentUser ? Object.keys(currentUser.answers) : [],
     authedUser: currentUser,
-    unansweredQuestions: currentUser ? Object.values(questions).filter(question => currentUser.answers[question.id]) : []
+    unansweredQuestionIds: currentUser ? Object.keys(questions).filter(qId => !currentUser.answers[qId]) : []
   }
 }
 

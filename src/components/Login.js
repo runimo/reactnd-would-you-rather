@@ -24,7 +24,7 @@ class Login extends Component {
             ))
             }
           </select>
-          <button className="btn-primary" onClick={this.handleLogin}>
+          <button className="btn btn-primary" onClick={this.handleLogin}>
             Login
           </button>
         </div>
