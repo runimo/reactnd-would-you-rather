@@ -11,6 +11,7 @@ class Logout extends Component {
 
     return (
       <div className="logout">
+        <img alt="Your avatar" className="avatar" height="70px" width="70px" src={authedUser.avatarURL} />
         <p className="logout-user">Hello, {authedUser.name}</p>
 
         <button className="logout__button" onClick={this.handleLogout}>Logout</button>

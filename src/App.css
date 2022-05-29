@@ -46,7 +46,7 @@
 
 .logout {
   display: flex;
-  margin-left: auto;
+  margin-left: 30px;
 }
 
 .logout__button {
@@ -267,4 +267,8 @@ legend {
 
 .card-header > h2 {
   margin: 0;
+}
+
+.avatar {
+  margin-top: 15px;
 }
