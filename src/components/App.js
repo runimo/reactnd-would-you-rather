@@ -32,8 +32,7 @@ class App extends Component {
           </header>
 
           <Routes>
-            <Route path='*' element={<Home />}>
-            </Route>
+            <Route path='*' element={<Home />} />
             <Route path='/new' element={<NewQuestionForm />} />
             <Route path='/leaderboard' element={<LeaderBoard />} />
           </Routes>
