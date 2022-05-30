@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { formatDate } from '../utils/helpers.js'
 
 class Question extends Component {
 
@@ -26,6 +27,7 @@ class Question extends Component {
       <li className="card">
         <div className="card-header">
           <h2>{this.authorName(question.author)} asks:</h2>
+          <span className="timestamp">{formatDate(question.timestamp)}</span>
         </div>
         <div className="flex p-t-0_5">
           <img alt="user avatar" className="card-avatar" height="150px" width ="150px" src={this.authorAvatar(question.author)} />
