@@ -8,6 +8,7 @@ import LeaderBoard from './LeaderBoard'
 import Logout from './Logout'
 import Nav from './Nav'
 import NewQuestionForm from './NewQuestionForm'
+import QuestionDetails from './QuestionDetails'
 
 class App extends Component {
   componentDidMount() {
@@ -35,6 +36,7 @@ class App extends Component {
             <Route path='*' element={<Home />} />
             <Route path='/new' element={<NewQuestionForm />} />
             <Route path='/leaderboard' element={<LeaderBoard />} />
+            <Route path='/question/:id' element={<QuestionDetails params={this.params} />} />
           </Routes>
         </Router>
       </div>

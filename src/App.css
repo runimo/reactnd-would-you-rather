@@ -166,6 +166,12 @@ input {
   padding-left: 6px;
 }
 
+input[type="radio"] {
+  vertical-align: middle;
+  margin-top: -1px;
+  cursor: pointer;
+}
+
 legend {
   font-weight: 600;
   font-size: 1.2em;
@@ -186,6 +192,10 @@ legend {
 
 .width-33 {
   width: 33%;
+}
+
+.width-50 {
+  width: 50%;
 }
 
 .width-100 {
@@ -253,6 +263,13 @@ legend {
   padding: 0;
 }
 
+.question-details {
+  width: 50%;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .card-avatar {
   margin-top: 3px;
   margin-right: 24px;
@@ -276,4 +293,9 @@ legend {
 .timestamp {
   font-size: small;
   color: #3D3D3D;
+}
+
+.radio-label {
+  margin-left: 5px;
+  cursor: pointer;
 }

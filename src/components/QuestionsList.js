@@ -9,7 +9,7 @@ class QuestionsList extends Component {
       return (
         <ul className="card-list">
           {questionIds.map((qId) => (
-            <Question key={qId} id={qId} />
+            <Question key={qId} id={qId} isPreview={true} />
           ))}
         </ul>
       )
