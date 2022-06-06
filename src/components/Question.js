@@ -1,10 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { formatDate } from '../utils/helpers.js'
+import { handleSaveQuestionAnswer } from '../actions/shared'
+import { saveUserAnswer } from '../actions/users'
 import { useNavigate } from 'react-router-dom'
 
-const Question = ({ id, isPreview, question, users }) => {
+const Question = ({ authedUser, dispatch, id, isPreview, question, users }) => {
   let navigate = useNavigate()
+  let [answer, setAnswer] = React.useState('optionOne');
 
   const authorAvatar = (authorId) => {
     return users[authorId] ? users[authorId].avatarURL : ''
@@ -14,8 +17,14 @@ const Question = ({ id, isPreview, question, users }) => {
     return users[authorId] ? users[authorId].name : ''
   }
 
+  const onOptionChange = (e) => {
+    setAnswer(e.target.value)
+  }
+
   const onSubmit = (e) => {
     e.preventDefault()
+    dispatch(handleSaveQuestionAnswer(question.id, answer))
+    dispatch(saveUserAnswer(answer, authedUser.id, question.id))
   }
 
   const onViewPoll = () => {
@@ -44,18 +53,18 @@ const Question = ({ id, isPreview, question, users }) => {
             </div>
           }
           {!isPreview &&
-            <form>
+            <form onSubmit={onSubmit}>
               <fieldset>
                 <div>
-                  <input id="optionOne" name="answer" type="radio" value="optionOne" defaultChecked />
+                  <input id="optionOne" name="answer" type="radio" value="optionOne" onChange={onOptionChange} defaultChecked />
                   <label className="radio-label" htmlFor="optionOne">{question.optionOne.text}</label>
                 </div>
                 <div>
-                  <input id="optionTwo" name="answer" type="radio" value="optionTwo" />
+                  <input id="optionTwo" name="answer" type="radio" value="optionTwo" onChange={onOptionChange} />
                   <label className="radio-label" htmlFor="optionTwo">{question.optionTwo.text}</label>
                 </div>
               </fieldset>
-              <button className="btn btn-primary width-50 m-t m-b-0_5" type="submit" onClick={e => onSubmit(e)}>Submit</button>
+              <button className="btn btn-primary width-50 m-t m-b-0_5" type="submit">Submit</button>
             </form>
           }
         </div>
@@ -65,8 +74,9 @@ const Question = ({ id, isPreview, question, users }) => {
 }
 
 
-function mapStateToProps({ questions, users }, { id, isPreview }) {
+function mapStateToProps({ authedUser, questions, users }, { id, isPreview }) {
   return {
+    authedUser,
     question: questions[id] || null,
     users
   }
