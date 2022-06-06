@@ -12,7 +12,9 @@ class QuestionDetails extends Component {
     const { params } = this.props
 
     return (
+      <ul>
         <Question id={params.id} isPreview={false} />
+      </ul>
     )
   }
 }

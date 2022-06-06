@@ -218,6 +218,14 @@ legend {
   margin-bottom: 12px;
 }
 
+.m-l-0_5 {
+  margin-left: 12px;
+}
+
+.p {
+  padding: 24px;
+}
+
 .p-r {
   padding-right: 24px;
 }
@@ -298,4 +306,50 @@ legend {
 .radio-label {
   margin-left: 5px;
   cursor: pointer;
+}
+
+.answer:not(.is-selected) {
+  border: 1px solid #d3d3d3;
+  border-radius: 3px;
+  background: #f3f3f3;
+}
+
+.is-selected {
+  border: 1px solid #00a86a;
+  border-radius: 3px;
+  background: #e8fff6;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.progress-bar {
+  height: 30px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  margin: 12px 0;
+  background: #00a86a;
+  text-align: center;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.bg-color-lightgrey {
+  background: #d3d3d3;
+}
+
+.border-radius-right {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.completed {
+  line-height: 30px;
+}
+
+.text-align-center {
+  text-align: center;
 }
