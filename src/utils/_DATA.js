@@ -7,7 +7,8 @@ let users = {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
       "am8ehyc8byjqgar0jgpub9": 'optionTwo',
-      "loxhs1bqm25b708cmbf3g": 'optionTwo'
+      "loxhs1bqm25b708cmbf3g": 'optionOne',
+      "xj352vofupe1dqz9emx13r": 'optionOne'
     },
     questions: ['8xf0y6ziyjabvozdd253nd', 'am8ehyc8byjqgar0jgpub9']
   },
@@ -19,7 +20,8 @@ let users = {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
       "am8ehyc8byjqgar0jgpub9": 'optionTwo',
-      "loxhs1bqm25b708cmbf3g": 'optionTwo'
+      "loxhs1bqm25b708cmbf3g": 'optionTwo',
+      "xj352vofupe1dqz9emx13r": 'optionOne'
     },
     questions: ['8xf0y6ziyjabvozdd253nd', 'am8ehyc8byjqgar0jgpub9']
   },
@@ -52,7 +54,7 @@ let users = {
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
-      "6ni6ok3ym7mf1p33lnez": 'optionTwo'
+      "6ni6ok3ym7mf1p33lnez": 'optionOne'
     },
     questions: ['6ni6ok3ym7mf1p33lnez', 'xj352vofupe1dqz9emx13r'],
   }
@@ -64,7 +66,7 @@ let questions = {
     author: 'jiayi',
     timestamp: 1467166872634,
     optionOne: {
-      votes: ['jiayi', 'kumiko'],
+      votes: ['jiayi', 'stef', 'kumiko'],
       text: 'have horrible short term memory',
     },
     optionTwo: {
@@ -77,11 +79,11 @@ let questions = {
     author: 'kumiko',
     timestamp: 1468479767190,
     optionOne: {
-      votes: [],
+      votes: ['ayanah'],
       text: 'become a superhero',
     },
     optionTwo: {
-      votes: ['kumiko', 'jiayi'],
+      votes: ['kumiko', 'jiayi', 'stef'],
       text: 'become a supervillain'
     }
   },
@@ -90,11 +92,11 @@ let questions = {
     author: 'jiayi',
     timestamp: 1488579767190,
     optionOne: {
-      votes: ['ayanah'],
+      votes: [],
       text: 'be telekinetic',
     },
     optionTwo: {
-      votes: ['jiayi'],
+      votes: ['jiayi', 'kumiko', 'stef'],
       text: 'be telepathic'
     }
   },
@@ -103,11 +105,11 @@ let questions = {
     author: 'jose',
     timestamp: 1482579767190,
     optionOne: {
-      votes: ['ayanah'],
+      votes: ['stef'],
       text: 'be a front-end developer',
     },
     optionTwo: {
-      votes: ['jiayi'],
+      votes: ['jiayi', 'kumiko'],
       text: 'be a back-end developer'
     }
   },
@@ -129,7 +131,7 @@ let questions = {
     author: 'ayanah',
     timestamp: 1493579767190,
     optionOne: {
-      votes: ['ayanah'],
+      votes: ['ayanah', 'stef', 'jiayis'],
       text: 'write JavaScript',
     },
     optionTwo: {
