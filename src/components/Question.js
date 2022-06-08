@@ -57,8 +57,8 @@ const Question = ({ authedUser, dispatch, id, isPreview, question, users }) => {
   return (
     <li className={`card ${!isPreview ? 'question-details' : ''}`}>
       <div className="card-header">
-        {!isAnsweredByAuthedUser && <h2>{authorName(question.author)} asks:</h2>}
-        {isAnsweredByAuthedUser && <h2>Asked by {authorName(question.author)}:</h2>}
+        {!isAnsweredByAuthedUser() && <h2>{authorName(question.author)} asks:</h2>}
+        {isAnsweredByAuthedUser() && <h2>Asked by {authorName(question.author)}:</h2>}
         <span className="timestamp">{formatDate(question.timestamp)}</span>
       </div>
       <div className="flex p-t-0_5">
@@ -73,7 +73,7 @@ const Question = ({ authedUser, dispatch, id, isPreview, question, users }) => {
             </div>
           }
           {/* Question full view */}
-          {!isPreview && !isAnsweredByAuthedUser &&
+          {!isPreview && !isAnsweredByAuthedUser() &&
             <form onSubmit={onSubmit}>
               <fieldset>
                 <div>
@@ -88,7 +88,7 @@ const Question = ({ authedUser, dispatch, id, isPreview, question, users }) => {
               <button className="btn btn-primary width-50 m-t m-b-0_5" type="submit">Submit</button>
             </form>
           }
-          {!isPreview && isAnsweredByAuthedUser &&
+          {!isPreview && isAnsweredByAuthedUser() &&
             <div>
               <div className={`m-b p bold answer ${answer === 'optionOne' ? 'is-selected' : ''}`}>
                 ...{question.optionOne.text}
