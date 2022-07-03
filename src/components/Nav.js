@@ -1,26 +1,37 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function Nav () {
   return (
     <nav className='nav' aria-label='Primary Navigation'>
       <ul>
-        <li>
-          <Link
+        <li className="nav-item">
+          <NavLink
             to='/'
-            exact="true" >
+            exact="true"
+            className={({ isActive }) =>
+              isActive ? 'active' : ''
+            }>
             Home
-          </Link>
+          </NavLink>
         </li>
-        <li>
-          <Link to='/add'>
+        <li className="nav-item">
+          <NavLink
+            to='/add'
+            className={({ isActive }) =>
+              isActive ? 'active' : ''
+            }>
             New Question
-          </Link>
+          </NavLink>
         </li>
-        <li>
-          <Link to='/leaderboard'>
+        <li className="nav-item">
+          <NavLink
+            to='/leaderboard'
+            className={({ isActive }) =>
+              isActive ? 'active' : ''
+            }>
             Leaderboard
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>

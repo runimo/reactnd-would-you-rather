@@ -76,23 +76,30 @@
 }
 
 .active {
-  font-weight: bold;
+  color: #aa71ff;
+  border-bottom: 2px solid #aa71ff;
 }
 
 .nav ul {
   display: flex;
-  justify-content: center;
-  text-decoration: none;
-  margin-left: auto;
 }
 
 .nav li:first-child {
   padding-left: 0;
 }
 
-.nav a {
+.nav a:not(.active) {
   color: #fff;
+}
+
+.nav a {
   text-decoration: none;
+  padding-bottom: 5px;
+  margin-right: 12px;
+}
+
+.nav-item {
+  padding-right: 0;
 }
 
 .nav-container {
@@ -176,10 +183,6 @@ input[type="radio"] {
 legend {
   font-weight: 600;
   font-size: 1.2em;
-}
-
-.active {
-  color: #7d34eb;
 }
 
 .sr-only {
