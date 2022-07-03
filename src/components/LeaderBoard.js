@@ -1,11 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import UserCard from './UserCard'
 
 class LeaderBoard extends Component {
   render () {
+    const { users } = this.props
+
     return (
-      <div>Leaderboard</div>
+      <ul className="flex flex-center flex-wrap card-list">
+      {Object.values(users).map(user => (
+        <UserCard id={user.id} key={user.id} />
+      ))}
+      </ul>
     )
   }
 }
 
-export default LeaderBoard
+function mapStateToProps ({ users }) {
+  return {
+    users
+  }
+}
+
+export default connect(mapStateToProps)(LeaderBoard)

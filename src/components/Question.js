@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { formatDate } from '../utils/helpers.js'
+import { formatDate } from '../utils/helpers'
 import { handleSaveQuestionAnswer } from '../actions/shared'
 import { saveUserAnswer } from '../actions/users'
 import { useNavigate } from 'react-router-dom'
@@ -55,7 +55,7 @@ const Question = ({ authedUser, dispatch, id, isPreview, question, users }) => {
   }
 
   return (
-    <li className={`card ${!isPreview ? 'question-details' : ''}`}>
+    <li className={`p-b-0_5 card ${!isPreview ? 'question-details' : ''}`}>
       <div className="card-header">
         {!isAnsweredByAuthedUser() && <h2>{authorName(question.author)} asks:</h2>}
         {isAnsweredByAuthedUser() && <h2>Asked by {authorName(question.author)}:</h2>}
