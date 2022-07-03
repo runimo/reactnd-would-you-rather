@@ -13,7 +13,7 @@ export default function Nav () {
           </Link>
         </li>
         <li>
-          <Link to='/new'>
+          <Link to='/add'>
             New Question
           </Link>
         </li>

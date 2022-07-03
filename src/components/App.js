@@ -34,7 +34,7 @@ class App extends Component {
 
           <Routes>
             <Route path='*' element={<Home />} />
-            <Route path='/new' element={<NewQuestionForm />} />
+            <Route path='/add' element={<NewQuestionForm />} />
             <Route path='/leaderboard' element={<LeaderBoard />} />
             <Route path='/question/:id' element={<QuestionDetails params={this.params} />} />
           </Routes>
