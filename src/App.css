@@ -449,3 +449,14 @@ legend {
   padding: 24px;
   margin-top: 24px;
 }
+
+.question-success {
+  text-align: center;
+}
+
+.question-success-icon {
+  display: block;
+  margin-right: auto;
+  margin-bottom: 12px;
+  margin-left: auto;
+}
