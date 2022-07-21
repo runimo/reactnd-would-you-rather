@@ -3,19 +3,15 @@ import Question from './Question'
 
 class QuestionsList extends Component {
   render () {
-    const { questionIds } = this.props
+    const { questionIds, id } = this.props
 
     if (questionIds.length) {
       return (
-        <ul className="card-list">
+        <ul className="card-list" id={id} role="tabpanel">
           {questionIds.map((qId) => (
             <Question key={qId} id={qId} isPreview={true} />
           ))}
         </ul>
-      )
-    } else {
-      return (
-        <div>You have not answered any questions yet.</div>
       )
     }
   }

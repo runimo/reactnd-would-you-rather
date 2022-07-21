@@ -1,13 +1,26 @@
 import React, { Component, Fragment } from 'react'
-import { Route, Routes } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Login from './Login'
 import QuestionsList from './QuestionsList'
-import SubNav from './SubNav'
 
 class Home extends Component {
+  state = {
+    activeTab: 'answered'
+  }
+
+  handleTabChange = (event, tab) => {
+    this.setActiveTab(tab)
+  }
+
+  setActiveTab = (tab) => {
+    this.setState(() => ({
+      activeTab: tab
+    }))
+  }
+
   render () {
     const { answeredQuestionIds, authedUser, unansweredQuestionIds } = this.props
+    const { activeTab } = this.state
 
     if (!authedUser) {
       return (
@@ -23,12 +36,21 @@ class Home extends Component {
     } else {
       return (
         <Fragment>
-          <SubNav />
+          <ul className="flex flex-center sub-navigation" role="tablist">
+            <li>
+              <a aria-controls="answered-panel" aria-selected={activeTab === 'answered'} className={activeTab === 'answered' ? 'active' : ''} href="#answered" id="tab-answered" onClick={e => this.handleTabChange(e, 'answered')} role="tab">
+                Answered
+              </a>
+            </li>
+            <li>
+              <a aria-controls="unanswered-panel" aria-selected={activeTab === 'unanswered'} className={activeTab === 'unanswered' ? 'active' : ''} href="#unanswered" id="tab-unanswered" onClick={e => this.handleTabChange(e, 'unanswered')} role="tab">
+                Unanswered
+              </a>
+            </li>
+          </ul>
           <div className="flex flex-center">
-            <Routes>
-              <Route path='/unanswered' element={<QuestionsList questionIds={unansweredQuestionIds} />} />
-              <Route path='/answered' element={<QuestionsList questionIds={answeredQuestionIds} />} />
-            </Routes>
+            {activeTab === 'answered' && <QuestionsList questionIds={answeredQuestionIds} aria-labelledby="tab-answered" id="answered-panel" />}
+            {activeTab === 'unanswered' && <QuestionsList questionIds={unansweredQuestionIds} aria-labelledby="tab-unanswered" id="unanswered-panel" />}
           </div>
         </Fragment>
       )

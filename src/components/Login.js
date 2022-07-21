@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Navigate } from 'react-router-dom'
 import { setAuthedUser } from '../actions/authedUser'
 
 class Login extends Component {
@@ -11,9 +10,8 @@ class Login extends Component {
   }
 
   render () {
-    const { authedUser, users } = this.props
+    const { users } = this.props
 
-    if (!authedUser) {
       return (
         <div className="login">
           <p>Please login to continue</p>
@@ -29,16 +27,11 @@ class Login extends Component {
           </button>
         </div>
       )
-    }
-    return <Navigate to='/unanswered' />
   }
 }
 
 function mapStateToProps ({ authedUser, users }) {
-  const currentUser = authedUser ? users[authedUser.id] : null
-
   return {
-    authedUser: currentUser,
     users: Object.values(users)
   }
 }

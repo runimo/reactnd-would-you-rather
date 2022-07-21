@@ -119,14 +119,10 @@ li {
   text-decoration: none;
 }
 
-.sub-navigation ul {
-  display: flex;
-  justify-content: center;
-}
-
 .sub-navigation a {
   color: #282c34;
   text-decoration: none;
+  padding-bottom: 5px;
 }
 
 .new-question {
