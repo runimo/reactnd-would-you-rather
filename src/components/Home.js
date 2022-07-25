@@ -5,7 +5,7 @@ import QuestionsList from './QuestionsList'
 
 class Home extends Component {
   state = {
-    activeTab: 'answered'
+    activeTab: 'unanswered'
   }
 
   handleTabChange = (event, tab) => {
@@ -37,20 +37,20 @@ class Home extends Component {
       return (
         <Fragment>
           <ul className="flex flex-center sub-navigation" role="tablist">
+          <li>
+              <a aria-controls="unanswered-panel" aria-selected={activeTab === 'unanswered'} className={activeTab === 'unanswered' ? 'active' : ''} href="#unanswered" id="tab-unanswered" onClick={e => this.handleTabChange(e, 'unanswered')} role="tab">
+                Unanswered
+              </a>
+            </li>
             <li>
               <a aria-controls="answered-panel" aria-selected={activeTab === 'answered'} className={activeTab === 'answered' ? 'active' : ''} href="#answered" id="tab-answered" onClick={e => this.handleTabChange(e, 'answered')} role="tab">
                 Answered
               </a>
             </li>
-            <li>
-              <a aria-controls="unanswered-panel" aria-selected={activeTab === 'unanswered'} className={activeTab === 'unanswered' ? 'active' : ''} href="#unanswered" id="tab-unanswered" onClick={e => this.handleTabChange(e, 'unanswered')} role="tab">
-                Unanswered
-              </a>
-            </li>
           </ul>
           <div className="flex flex-center">
-            {activeTab === 'answered' && <QuestionsList questionIds={answeredQuestionIds} aria-labelledby="tab-answered" id="answered-panel" />}
             {activeTab === 'unanswered' && <QuestionsList questionIds={unansweredQuestionIds} aria-labelledby="tab-unanswered" id="unanswered-panel" />}
+            {activeTab === 'answered' && <QuestionsList questionIds={answeredQuestionIds} aria-labelledby="tab-answered" id="answered-panel" />}
           </div>
         </Fragment>
       )
