@@ -214,6 +214,10 @@ legend {
   margin-top: 12px;
 }
 
+.m-t-0_75 {
+  margin-top: 18px;
+}
+
 .m-b {
   margin-bottom: 24px;
 }
@@ -273,6 +277,12 @@ legend {
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .flex-grow-1 {
@@ -458,4 +468,8 @@ legend {
   margin-right: auto;
   margin-bottom: 12px;
   margin-left: auto;
+}
+
+.text-align-center {
+  text-align: center;
 }
