@@ -42,7 +42,7 @@ const NewQuestionForm = ({ dispatch, questions }) => {
       optionOneText,
       optionTwoText
     }
-    console.log('question', question)
+
 
     const questionExists = checkIfQuestionExists(question)
     console.log('questionExists', questionExists)
