@@ -1,21 +1,8 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 class UserCard extends Component {
   render () {
     const { user } = this.props
-
-    const answersCount = () => {
-      return Object.keys(user.answers).length
-    }
-
-    const questionsCount = () => {
-      return user.questions.length
-    }
-
-    const totalCount = () => {
-      return answersCount() + questionsCount()
-    }
 
     return (
       <li className="card user-card p-b-0">
@@ -27,7 +14,7 @@ class UserCard extends Component {
               Questions answered
             </div>
             <div>
-              {answersCount(user.id)}
+              {user.answersCount}
             </div>
           </div>
           <div className="flex flex-between m-t m-r">
@@ -35,7 +22,7 @@ class UserCard extends Component {
               Questions asked
             </div>
             <div>
-              {questionsCount(user.id)}
+              {user.questionsCount}
             </div>
           </div>
         </div>
@@ -46,20 +33,19 @@ class UserCard extends Component {
             </div>
             <div className="score-content">
               <div className="score">
-                {totalCount(user.id)}
+                {user.totalCount}
               </div>
             </div>
           </div>
         </div>
+
+        {user.isLeading && <div className="medal-container">
+          <img alt="medal with a happy face" height="60px" src="/icons/medal.png" width="60px" />
+          <a className="copyright-link text-vertical" href="https://www.flaticon.com/free-icons/ui" title="ui icons">Ui icons created by Freepik - Flaticon</a>
+        </div>}
       </li>
     )
   }
 }
 
-function mapStateToProps ({ users }, { id }) {
-  return {
-    user: users[id]
-  }
-}
-
-export default connect(mapStateToProps)(UserCard)
+export default UserCard

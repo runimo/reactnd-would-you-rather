@@ -317,7 +317,6 @@ legend {
 .user-card {
   display: flex;
   flex: 0 0 50%;
-  flex-wrap: wrap;
 }
 
 .user-card-image {
@@ -472,4 +471,20 @@ legend {
 
 .text-align-center {
   text-align: center;
+}
+
+.text-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.medal-container {
+  position: absolute;
+  right: 340px;
+  flex-basis: 5%;
+  display: flex;
+}
+
+.medal-container a {
+  margin-top: 16px;
 }

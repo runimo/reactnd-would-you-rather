@@ -9,7 +9,6 @@ export default function users (state = {}, action) {
       }
     case SAVE_USER_ANSWER:
       const { answer, authedUser, qid } = action
-      console.log('authedUser', authedUser)
       return {
         ...state,
         [authedUser]: {

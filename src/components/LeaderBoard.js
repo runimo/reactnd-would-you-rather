@@ -8,8 +8,8 @@ class LeaderBoard extends Component {
 
     return (
       <ul className="flex flex-center flex-wrap card-list">
-      {Object.values(users).map(user => (
-        <UserCard id={user.id} key={user.id} />
+      {users.map(user => (
+        <UserCard key={user.id} user={user} />
       ))}
       </ul>
     )
@@ -17,8 +17,29 @@ class LeaderBoard extends Component {
 }
 
 function mapStateToProps ({ users }) {
+  let allTotalCounts = []
+  const sortedUsers = Object.values(users)
+    .map(user => {
+      const answersCount = Object.keys(user.answers).length
+      const questionsCount = user.questions.length
+      const totalCount = answersCount + questionsCount
+      allTotalCounts.push(totalCount)
+      return {
+        ...user,
+        answersCount,
+        questionsCount,
+        totalCount
+      }
+    })
+    .sort((a,b) => b.totalCount - a.totalCount)
+    .map(user => {
+      return {
+        ...user,
+        isLeading: user.totalCount === Math.max(...allTotalCounts)
+      }
+    })
   return {
-    users
+    users: sortedUsers
   }
 }
 
