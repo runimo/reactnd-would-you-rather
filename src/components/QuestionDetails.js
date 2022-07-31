@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
-import { useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 
 function withParams(Component) {
   return props => <Component {...props} params={useParams()} />;
@@ -9,14 +9,33 @@ function withParams(Component) {
 
 class QuestionDetails extends Component {
   render () {
-    const { params } = this.props
+    const { params, questionIds } = this.props
 
-    return (
-      <ul>
-        <Question id={params.id} isPreview={false} />
-      </ul>
-    )
+    const questionExists = !!questionIds.find(qId => qId === params.id)
+    console.log('id', params.id)
+    console.log('questionIds', questionIds)
+    console.log('questionExists', questionExists)
+
+    if (questionExists) {
+      return (
+        <ul>
+          <Question id={params.id} isPreview={false} />
+        </ul>
+      )
+    } else {
+      return (
+        <Navigate to='/404' />
+      )
+    }
+
   }
 }
 
-export default connect()(withParams(QuestionDetails))
+function mapStateToProps ({ questions }) {
+  const questionIds = Object.keys(questions)
+  return {
+    questionIds
+  }
+}
+
+export default connect(mapStateToProps)(withParams(QuestionDetails))

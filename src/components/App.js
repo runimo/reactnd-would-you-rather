@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import '../App.css'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom'
 import { connect } from 'react-redux'
+import PageNotFound from './PageNotFound.js'
 import { handleInitialData } from '../actions/shared.js'
 import Home from './Home'
 import LeaderBoard from './LeaderBoard'
@@ -33,10 +34,12 @@ class App extends Component {
           </header>
 
           <Routes>
-            <Route path='*' element={<Home />} />
+            <Route path='/' element={<Home />} />
             <Route path='/add' element={<NewQuestionForm />} />
             <Route path='/leaderboard' element={<LeaderBoard />} />
             <Route path='/question/:id' element={<QuestionDetails params={this.params} />} />
+            <Route path='*' element={<Navigate to='/404' replace />} />
+            <Route path='/404' element={<PageNotFound />} />
           </Routes>
         </Router>
       </div>

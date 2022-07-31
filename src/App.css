@@ -206,6 +206,10 @@ legend {
   margin: 0;
 }
 
+.m-t-0 {
+  margin-top: 0;
+}
+
 .m-t {
   margin-top: 24px;
 }
@@ -218,12 +222,20 @@ legend {
   margin-top: 18px;
 }
 
+.m-t-2 {
+  margin-top: 48px;
+}
+
 .m-b {
   margin-bottom: 24px;
 }
 
 .m-b-0_5 {
   margin-bottom: 12px;
+}
+
+.m-b-2 {
+  margin-bottom: 48px;
 }
 
 .m-l-0_5 {
@@ -236,6 +248,11 @@ legend {
 
 .m-r-0_5 {
   margin-right: 12px;
+}
+
+.m-h-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .p {
@@ -487,4 +504,8 @@ legend {
 
 .medal-container a {
   margin-top: 16px;
+}
+
+.font-size-7 {
+  font-size: 7em;
 }
