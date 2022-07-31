@@ -12,9 +12,6 @@ class QuestionDetails extends Component {
     const { params, questionIds } = this.props
 
     const questionExists = !!questionIds.find(qId => qId === params.id)
-    console.log('id', params.id)
-    console.log('questionIds', questionIds)
-    console.log('questionExists', questionExists)
 
     if (questionExists) {
       return (
