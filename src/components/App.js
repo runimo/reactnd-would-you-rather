@@ -6,6 +6,7 @@ import PageNotFound from './PageNotFound.js'
 import { handleInitialData } from '../actions/shared.js'
 import Home from './Home'
 import LeaderBoard from './LeaderBoard'
+import LoadingBar from 'react-redux-loading'
 import Logout from './Logout'
 import Nav from './Nav'
 import NewQuestionForm from './NewQuestionForm'
@@ -21,6 +22,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <LoadingBar style={{ backgroundColor: '#aa71ff', height: '2px' }} />
         <Router>
           <header className="App-header">
             <h1 className="title">Would you rather...?</h1>
