@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Question = ({ authedUser, dispatch, id, isPreview, question, users }) => {
   let navigate = useNavigate()
-  let selectedAnswer = users[authedUser.id].answers[id] || 'optionOne'
+  let selectedAnswer = authedUser ? users[authedUser.id].answers[id] : 'optionOne'
 
   let [answer, setAnswer] = React.useState(selectedAnswer)
 
@@ -20,7 +20,7 @@ const Question = ({ authedUser, dispatch, id, isPreview, question, users }) => {
   }
 
   const isAnsweredByAuthedUser = () => {
-    return !!users[authedUser.id].answers[id]
+    return authedUser ? !!users[authedUser.id].answers[id] : false
   }
 
   const onOptionChange = (e) => {
@@ -65,7 +65,7 @@ const Question = ({ authedUser, dispatch, id, isPreview, question, users }) => {
         <img alt="user avatar" className="card-avatar" height="150px" width ="150px" src={authorAvatar(question.author)} />
         <div className="width-100 p-r">
           <h3>Would you rather...</h3>
-         {/* Question preview */}
+          {/* Question preview */}
           {isPreview &&
             <div>
               <div className="m-b">{optionOneText()}</div>
