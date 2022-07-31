@@ -92,6 +92,9 @@ const Question = ({ authedUser, dispatch, id, isPreview, question, users }) => {
             <div>
               <div className={`m-b p bold answer ${answer === 'optionOne' ? 'is-selected' : ''}`}>
                 ...{question.optionOne.text}
+                {answer === 'optionOne' && <div className="voted">
+                  <span>Your vote</span>
+                </div>}
                 <div className="text-align-center">
                   <div className="bg-color-lightgrey border-radius-right">
                     <div className="progress-bar" style={{ width: percentageVoted('optionOne')}}>
@@ -103,6 +106,9 @@ const Question = ({ authedUser, dispatch, id, isPreview, question, users }) => {
               </div>
               <div className={`m-b p bold answer ${answer === 'optionTwo' ? 'is-selected' : ''}`}>
                 ...{question.optionTwo.text}
+                {answer === 'optionTwo' && <div className="voted">
+                  <span>Your vote</span>
+                </div>}
                 <div className="text-align-center">
                   <div className="bg-color-lightgrey border-radius-right">
                     <div className="progress-bar" style={{ width: percentageVoted('optionTwo')}}>
@@ -112,8 +118,7 @@ const Question = ({ authedUser, dispatch, id, isPreview, question, users }) => {
                   <span>{timesVoted('optionTwo')}</span>
                 </div>
               </div>
-            </div>
-          }
+            </div>}
         </div>
       </div>
     </li>

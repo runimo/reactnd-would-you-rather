@@ -509,3 +509,22 @@ legend {
 .font-size-7 {
   font-size: 7em;
 }
+
+.voted {
+  background: #e29b33;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  top: -60px;
+  right: -415px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voted span {
+  font-size: 14px;
+  padding-left: 10px;
+}
