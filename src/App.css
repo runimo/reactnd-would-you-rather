@@ -203,7 +203,6 @@ ul {
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   color: #282c34;
 }
 
@@ -251,10 +250,16 @@ ul {
 .login {
   display: flex;
   flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 
-  width: 20%;
-  margin: auto;
   padding-top: 24px;
+}
+
+.login > * {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .login__select {
@@ -525,7 +530,6 @@ ul {
 }
 
 .medal-container {
-  position: absolute;
   right: 340px;
   flex-basis: 5%;
   display: flex;
@@ -552,4 +556,43 @@ ul {
 .voted span {
   font-size: 14px;
   padding-left: 10px;
+}
+
+
+/** media queries **/
+
+@media (max-width: 550px) {
+  .login > * {
+    width: 60%;
+  }
+}
+
+@media (min-width: 551px) {
+  .login > * {
+    width: 50%;
+  }
+}
+
+@media (min-width: 770px) {
+  .login > * {
+    width: 45%;
+  }
+}
+
+@media (min-width: 880px) {
+  .login > * {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1100px) {
+  .login > * {
+    width: 33%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .login > * {
+    width: 20%;
+  }
 }
