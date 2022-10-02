@@ -39,6 +39,10 @@
   margin-top: 24px;
 }
 
+.m-t-1_5 {
+  margin-top: 36px;
+}
+
 .m-t-2 {
   margin-top: 48px;
 }
@@ -55,6 +59,10 @@
   margin-bottom: 48px;
 }
 
+.m-l {
+  margin-left: 24px;
+}
+
 .m-l-0_5 {
   margin-left: 12px;
 }
@@ -65,6 +73,10 @@
 
 .m-r {
   margin-right: 24px;
+}
+
+.m-r-2 {
+  margin-right: 48px;
 }
 
 .p {
@@ -219,6 +231,11 @@ ul {
 .title {
   color: #e39b32;
   margin-bottom: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
 }
 
 .img-container {
@@ -397,6 +414,7 @@ ul {
 
 .card-list > li {
   margin-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .card {
@@ -428,23 +446,33 @@ ul {
 .user-card {
   display: flex;
   flex: 0 0 50%;
+  flex-wrap: wrap;
+  position: relative;
 }
 
 .user-card-image {
   flex-basis: 5%;
+  margin-top: 12px;
   margin-right: auto;
   margin-left: auto;
 }
 
+.user-card-data {
+  margin: 36px 24px 0 0;
+  flex-grow: 1;
+}
+
 .user-card-score {
   flex-basis: 10%;
-  margin: 24px;
+  justify-content: start;
+  margin: 40px auto 24px auto;
 }
 
 .score-container {
   border: 1px solid #d3d3d3;
   border-radius: 4px;
   padding-bottom: 12px;
+  height: fit-content;
 }
 
 .score-label {
@@ -530,13 +558,19 @@ ul {
 }
 
 .medal-container {
-  right: 340px;
   flex-basis: 5%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  position: absolute;
+  left: -30px;
 }
 
 .medal-container a {
-  margin-top: 16px;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
 .voted {
@@ -594,5 +628,66 @@ ul {
 @media (min-width: 1600px) {
   .login > * {
     width: 20%;
+  }
+}
+
+@media (max-width: 500px) {
+  .user-card {
+    width: 80%;
+  }
+}
+
+@media (max-width: 760px) {
+  .user-card {
+    width: 50%
+  }
+}
+
+@media (min-width: 761px) and (max-width: 994px) {
+  .user-card {
+    width: 40%;
+  }
+}
+
+@media (max-width: 995px) {
+  .card-list {
+    flex-direction: column;
+  }
+
+  .user-card {
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .user-card-image {
+    width: 230px;
+    height: 230px;
+  }
+
+  .user-card-data {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .score-container {
+    width: 200px;
+  }
+}
+
+@media (min-width: 996px) {
+  .user-card {
+    padding-right: 30px;
+  }
+
+  .user-card-image {
+    margin-left: 12px;
+  }
+}
+
+@media (min-width: 1045px) {
+  .user-card-data {
+    padding-right: 24px;
+    padding-left: 12px;
   }
 }

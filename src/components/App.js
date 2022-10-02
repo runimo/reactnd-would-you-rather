@@ -35,14 +35,16 @@ class App extends Component {
 
           </header>
 
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/add' element={<NewQuestionForm />} />
-            <Route path='/leaderboard' element={<LeaderBoard />} />
-            <Route path='/question/:id' element={<QuestionDetails params={this.params} />} />
-            <Route path='*' element={<Navigate to='/404' replace />} />
-            <Route path='/404' element={<PageNotFound />} />
-          </Routes>
+          <main className="main">
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/add' element={<NewQuestionForm />} />
+              <Route path='/leaderboard' element={<LeaderBoard />} />
+              <Route path='/question/:id' element={<QuestionDetails params={this.params} />} />
+              <Route path='*' element={<Navigate to='/404' replace />} />
+              <Route path='/404' element={<PageNotFound />} />
+            </Routes>
+          </main>
         </Router>
       </div>
     )
