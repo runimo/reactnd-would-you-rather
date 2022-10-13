@@ -17,8 +17,24 @@ class App extends Component {
     this.props.dispatch(handleInitialData())
   }
 
+  state = {
+    isOpen: false
+  }
+
+  isMenuIconVisible = () => {
+    const menu = document.getElementById('menu-icon')
+    return menu ? menu.offsetParent !== null : false
+  }
+
+  toggleMenu = () => {
+    this.setState(() => ({
+      isOpen: !this.state.isOpen
+    }))
+  }
+
   render () {
     const { authedUser } = this.props
+    const { isOpen } = this.state
 
     return (
       <div className="App">
@@ -27,8 +43,16 @@ class App extends Component {
           <header className="App-header">
             <h1 className="title">Would you rather...?</h1>
 
+            <button className="btn menu-bars" id="menu-icon" onClick={this.toggleMenu}>
+              <img alt="menu" height="30px" src="/icons/bars-solid.svg" width="30px" />
+              {this.isMenuIconVisible() && <div>
+              <Nav isCollapsible={true} isOpen={isOpen} />
+            </div>}
+
+            </button>
+
             <div className="nav-container">
-              <Nav />
+              <Nav isCollapsible={false} isOpen={false} />
 
               { authedUser && <Logout /> }
             </div>
