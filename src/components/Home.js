@@ -37,13 +37,13 @@ class Home extends Component {
       return (
         <Fragment>
           <ul className="flex flex-center sub-navigation" role="tablist">
-            <li>
-              <a aria-controls="unanswered-panel" aria-selected={activeTab === 'unanswered'} className={activeTab === 'unanswered' ? 'active' : ''} href="#unanswered" id="tab-unanswered" onClick={e => this.handleTabChange(e, 'unanswered')} role="tab">
+            <li className={activeTab === 'unanswered' ? 'active' : ''}>
+              <a aria-controls="unanswered-panel" aria-selected={activeTab === 'unanswered'} href="#unanswered" id="tab-unanswered" onClick={e => this.handleTabChange(e, 'unanswered')} role="tab">
                 Unanswered
               </a>
             </li>
-            <li>
-              <a aria-controls="answered-panel" aria-selected={activeTab === 'answered'} className={activeTab === 'answered' ? 'active' : ''} href="#answered" id="tab-answered" onClick={e => this.handleTabChange(e, 'answered')} role="tab">
+            <li className={activeTab === 'answered' ? 'active' : ''}>
+              <a aria-controls="answered-panel" aria-selected={activeTab === 'answered'} href="#answered" id="tab-answered" onClick={e => this.handleTabChange(e, 'answered')} role="tab">
                 Answered
               </a>
             </li>

@@ -259,8 +259,12 @@ ul {
 }
 
 .is-active {
-  color: #aa71ff;
-  border-bottom: 2px solid #aa71ff;
+  color: #8E42FF;
+  border-bottom: 2px solid #8E42FF;
+}
+
+.nav-item:hover a {
+  border-bottom: 2px solid #7525ed;
 }
 
 /** login **/
@@ -284,7 +288,7 @@ ul {
   height: 32px;
   margin-bottom: 10px;
   border-radius: 4px;
-  border-color: lightgray;
+  border-color: #f3f3f3;
   cursor: pointer;
 }
 
@@ -361,9 +365,40 @@ ul {
 }
 
 .sub-navigation a {
-  color: #282c34;
+  color: black;
   text-decoration: none;
   padding-bottom: 5px;
+}
+
+.sub-navigation .active a {
+  color: #fff;
+}
+
+.sub-navigation li {
+  background: #f3f3f3;
+  cursor: pointer;
+}
+
+.sub-navigation li:hover {
+  background: #7525ed;
+}
+
+.sub-navigation li:hover a {
+  color: #fff;
+}
+
+.sub-navigation li:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.sub-navigation li:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.sub-navigation .active {
+  background: #8E42FF;
 }
 
 /** buttons **/
@@ -380,6 +415,10 @@ ul {
   background: #00a86a;
   color: #fff;
   font-weight: 550;
+}
+
+.btn-primary:hover {
+  background: #01925d;
 }
 
 .btn-outline {
@@ -533,6 +572,10 @@ ul {
 .radio-label {
   margin-left: 5px;
   cursor: pointer;
+}
+
+.selected {
+  font-weight: 600;
 }
 
 .answer:not(.is-selected) {

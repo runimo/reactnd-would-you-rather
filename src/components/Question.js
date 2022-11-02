@@ -7,7 +7,8 @@ import { useNavigate } from 'react-router-dom'
 
 const Question = ({ authedUser, dispatch, id, isPreview, question, users }) => {
   let navigate = useNavigate()
-  let selectedAnswer = authedUser ? users[authedUser.id].answers[id] : 'optionOne'
+  const authedUserAnswer = users[authedUser.id].answers[id]
+  let selectedAnswer = authedUser && authedUserAnswer ? authedUserAnswer : 'optionOne'
 
   let [answer, setAnswer] = React.useState(selectedAnswer)
 
@@ -78,11 +79,11 @@ const Question = ({ authedUser, dispatch, id, isPreview, question, users }) => {
               <fieldset>
                 <div>
                   <input id="optionOne" name="answer" type="radio" value="optionOne" onChange={onOptionChange} checked={answer === 'optionOne'} disabled={isAnsweredByAuthedUser()} />
-                  <label className="radio-label" htmlFor="optionOne">{question.optionOne.text}</label>
+                  <label className={`radio-label ${answer === 'optionOne' ? 'selected' : ''}`} htmlFor="optionOne">{question.optionOne.text}</label>
                 </div>
                 <div>
                   <input id="optionTwo" name="answer" type="radio" value="optionTwo" onChange={onOptionChange} checked={answer === 'optionTwo'} disabled={isAnsweredByAuthedUser()} />
-                  <label className="radio-label" htmlFor="optionTwo">{question.optionTwo.text}</label>
+                  <label className={`radio-label ${answer === 'optionTwo' ? 'selected' : ''}`} htmlFor="optionTwo">{question.optionTwo.text}</label>
                 </div>
               </fieldset>
               <button className="btn btn-primary width-50 m-t m-b-0_5" type="submit">Submit</button>
