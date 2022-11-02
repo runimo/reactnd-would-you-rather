@@ -1,22 +1,29 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Login from './Login'
 import UserCard from './UserCard'
 
 class LeaderBoard extends Component {
   render () {
-    const { users } = this.props
+    const { authedUser, users } = this.props
 
-    return (
-      <ul className="flex flex-center flex-wrap card-list">
-      {users.map(user => (
-        <UserCard key={user.id} user={user} />
-      ))}
-      </ul>
-    )
+    if (authedUser) {
+      return (
+        <ul className="flex flex-center flex-wrap card-list">
+        {users.map(user => (
+          <UserCard key={user.id} user={user} />
+        ))}
+        </ul>
+      )
+    } else {
+      return (
+        <Login />
+      )
+    }
   }
 }
 
-function mapStateToProps ({ users }) {
+function mapStateToProps ({ users, authedUser }) {
   let allTotalCounts = []
   const sortedUsers = Object.values(users)
     .map(user => {
@@ -39,6 +46,7 @@ function mapStateToProps ({ users }) {
       }
     })
   return {
+    authedUser,
     users: sortedUsers
   }
 }

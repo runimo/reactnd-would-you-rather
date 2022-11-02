@@ -19,8 +19,8 @@
 }
 
 .m-h-auto {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .m-t-0 {
@@ -45,6 +45,10 @@
 
 .m-t-2 {
   margin-top: 48px;
+}
+
+.m-b-0 {
+  margin-bottom: 0;
 }
 
 .m-b-0_5 {
@@ -229,7 +233,6 @@ ul {
 
 .title {
   color: #e39b32;
-  margin-bottom: 0;
 }
 
 .main {
@@ -740,7 +743,7 @@ ul {
     display: none;
   }
 
-  .App-header {
+  .logged-in {
     flex-direction: row;
   }
 

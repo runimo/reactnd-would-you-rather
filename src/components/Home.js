@@ -24,14 +24,7 @@ class Home extends Component {
 
     if (!authedUser) {
       return (
-        <Fragment>
-          <div className="img-container">
-            <img className="illustration" src="/images/would_you_rather_illustration_jcomp_freepik.jpg" alt="Illustration of a woman sitting cross-legged and scratching her head, looking at a huge question mark" />
-            <a className="copyright-link" href='https://www.freepik.com/vectors/people'>People vector created by jcomp - www.freepik.com</a>
-          </div>
-
-          <Login />
-        </Fragment>
+        <Login />
       )
     } else {
       return (

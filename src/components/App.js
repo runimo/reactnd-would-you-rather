@@ -40,22 +40,21 @@ class App extends Component {
       <div className="App">
         <LoadingBar style={{ backgroundColor: '#aa71ff', height: '2px' }} />
         <Router>
-          <header className="App-header">
-            <h1 className="title">Would you rather...?</h1>
+          <header className={`${authedUser ? 'logged-in' : ''} App-header`}>
+            <h1 className={`title ${authedUser ? 'm-b-0 m-h-auto' : ''}`}>Would you rather...?</h1>
 
-            <button className="btn menu-bars" id="menu-icon" onClick={this.toggleMenu}>
+            {authedUser && <button className={`btn menu-bars ${authedUser ? 'm-h-auto' : ''}`} id="menu-icon" onClick={this.toggleMenu}>
               <img alt="menu" height="30px" src="/icons/bars-solid.svg" width="30px" />
               {this.isMenuIconVisible() && <div>
               <Nav isCollapsible={true} isOpen={isOpen} />
             </div>}
+            </button>}
 
-            </button>
-
-            <div className="nav-container">
+            {authedUser && <div className="nav-container">
               <Nav isCollapsible={false} isOpen={false} />
 
-              { authedUser && <Logout /> }
-            </div>
+              <Logout />
+            </div>}
 
           </header>
 
