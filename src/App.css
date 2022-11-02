@@ -585,6 +585,7 @@ ul {
 }
 
 .is-selected {
+  position: relative;
   border: 1px solid #00a86a;
   border-radius: 3px;
   background: #e8fff6;
@@ -638,13 +639,13 @@ ul {
 }
 
 .voted {
+  position: absolute;
   background: #e29b33;
   border-radius: 50%;
   height: 50px;
   width: 50px;
-  position: relative;
-  top: -60px;
-  right: -415px;
+  right: -25px;
+  bottom: 110px;
   color: #fff;
   display: flex;
   align-items: center;
