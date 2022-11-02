@@ -61,9 +61,9 @@ const Question = ({ authedUser, dispatch, id, isPreview, question, users }) => {
         {isAnsweredByAuthedUser() && <h2>Asked by {authorName(question.author)}:</h2>}
         <span className="timestamp">{formatDate(question.timestamp)}</span>
       </div>
-      <div className="flex p-t-0_5">
+      <div className="flex card-content p-t-0_5">
         <img alt="user avatar" className="card-avatar" height="150px" width ="150px" src={authorAvatar(question.author)} />
-        <div className="width-100 p-r">
+        <div className="card-question-details">
           <h3>Would you rather...</h3>
           {/* Question preview */}
           {isPreview &&
