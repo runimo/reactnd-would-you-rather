@@ -9,6 +9,7 @@ import LeaderBoard from './LeaderBoard'
 import LoadingBar from 'react-redux-loading'
 import Logout from './Logout'
 import Nav from './Nav'
+import { NavLink } from 'react-router-dom'
 import NewQuestionForm from './NewQuestionForm'
 import QuestionDetails from './QuestionDetails'
 
@@ -41,7 +42,14 @@ class App extends Component {
         <LoadingBar style={{ backgroundColor: '#aa71ff', height: '2px' }} />
         <Router>
           <header className={`${authedUser ? 'logged-in' : ''} App-header`}>
-            <h1 className={`title ${authedUser ? 'm-b-0 m-h-auto' : ''}`}>Would you rather...?</h1>
+            <h1 className={`title ${authedUser ? 'm-b-0 m-h-auto' : ''}`}>
+
+              <NavLink
+              to='/'
+              exact="true">
+              Would you rather...?
+            </NavLink>
+            </h1>
 
             {authedUser && <button className={`btn menu-bars ${authedUser ? 'm-h-auto' : ''}`} id="menu-icon" onClick={this.toggleMenu}>
               <img alt="menu" height="30px" src="/icons/bars-solid.svg" width="30px" />

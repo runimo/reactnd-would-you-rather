@@ -164,7 +164,7 @@
   text-orientation: mixed;
 }
 
-/** colors **/
+/** utilities - colors **/
 
 .color-white {
   color: #fff;
@@ -174,7 +174,7 @@
   background: #d3d3d3;
 }
 
-/** borders **/
+/** utilities - borders **/
 
 .border-radius-right {
   border-top-right-radius: 3px;
@@ -233,6 +233,11 @@ ul {
 
 .title {
   color: #e39b32;
+}
+
+.title a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .main {
